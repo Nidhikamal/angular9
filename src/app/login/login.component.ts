@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
       //alert s message
       return;
     }
-    
+    this.router.navigate(['/home/dashboard']);
 
-    this.data = JSON.stringify(this.loginForm.value);
+    /*this.data = JSON.stringify(this.loginForm.value);
     
     const loginPayload = {
       username: this.loginForm.value.username,
@@ -49,13 +49,13 @@ export class LoginComponent implements OnInit {
        
         console.log('user.token' + this.response.token);
         localStorage.setItem('token', this.response.token); // store token in local storage. /
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);//dashboard
       } else {
         // alert("username  or password is wrong");
         this.loginresult = 'Username or Password incorrect.';
       }
     }, error => {
        console.log(error);
-    });
+    });*/
   }
 }
