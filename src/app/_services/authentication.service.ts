@@ -20,10 +20,10 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
-    login(username: string, password: string) {
-        return this.http.post<any>(`${environment.api}/users/authenticate`, { username, password })
+    login(loginPayload) {
+        return this.http.post<any>(environment.api + '/token/generate-token', loginPayload,)
             .pipe(map(user => {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                // store user details and jwt token in local storage to keep user logged in between page refreshe
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
                 return user;
