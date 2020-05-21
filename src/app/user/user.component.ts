@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 
@@ -9,14 +9,21 @@ import * as wjcGrid from '@grapecity/wijmo.grid';
 })
 export class UserComponent implements OnInit {
   source: any;
-
+  @Output() homeChanged = new EventEmitter;
   constructor() {
     this.source = this.getData(100);
   }
-
+  colspanLeft = 2;
+  colspanRight = 0;
+  
+  clickedMe(){
+    this.homeChanged.emit(this.colspanLeft);
+    this.colspanLeft = 1;
+    this.colspanRight = 1;
+  }
   getData(count: number) {
     var task = 'aa,bb,cc,dd,ee,ff,gg,hh'.split(','), data = [];
-    for (var i = 0; i < count; i++) {
+    for (var i = 1; i < count; i++) {
       data.push({
         id: i,
         task: task[i % task.length]+"_"+i,
@@ -27,8 +34,8 @@ export class UserComponent implements OnInit {
     }
     return new wjcCore.CollectionView(data);
   }
-
   ngOnInit(): void {
+   
   }
 
 }
