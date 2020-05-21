@@ -12,6 +12,7 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  response: any;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
@@ -35,26 +36,29 @@ export class LoginComponent implements OnInit {
   
   }
   async onSubmit() {
-    this.loginInvalid = false;
+    
     this.formSubmitAttempt = false;
     if (this.form.valid) {
       const loginPayload = {
         username: this.form.get('username').value,
         password:  this.form.get('password').value,
       };
-      try {
        
-        this.authenticationService.login(loginPayload)
-            .pipe(first())
-            .subscribe(
-                data => {
-                     console.log(data)
-
-                    this.router.navigate(['/home']);
-                })
-      } catch (err) {
-        this.loginInvalid = true;
-      }
+        this.authenticationService.login(loginPayload).subscribe(data => {
+            console.log(data);
+            this.response = data;
+            if (this.response && this.response.token) {
+            console.log('user.token' + this.response.token);
+            localStorage.setItem('token', this.response.token); // store token in local storage. /
+            this.router.navigate(['/home']);
+          } else {
+            this.loginInvalid = true;
+          }
+        }, error => {
+          this.loginInvalid = true;
+       });
+           
+      
     } else {
 
       this.formSubmitAttempt = true;

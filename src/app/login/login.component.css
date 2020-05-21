@@ -2,6 +2,18 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 
+body {
+  background: #456;
+  font-family: 'Open Sans', sans-serif;
+}
+.custom-grid .wj-header.wj-cell {
+  background-color: orange;
+}
+
+.custom-grid .wj-cell, .custom-grid .wj-cell.wj-alt {
+  background-color: cyan;
+}
+html, body { height: 100%; }
 .login {
   width: 400px;
   margin: 16px auto;

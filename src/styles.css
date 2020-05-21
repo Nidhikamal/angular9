@@ -1,4 +1,4 @@
-@import  url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
 @import "~@grapecity/wijmo.styles/wijmo.css";
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
@@ -6,20 +6,10 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+
 h1 {
+
   text-align: center;
 }
 
-body {
-    background: #456;
-    font-family: 'Open Sans', sans-serif;
-}
-.custom-grid .wj-header.wj-cell {
-    background-color: orange;
-  }
-  
-  .custom-grid .wj-cell, .custom-grid .wj-cell.wj-alt {
-    background-color: cyan;
-  }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
