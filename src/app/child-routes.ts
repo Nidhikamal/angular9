@@ -1,5 +1,6 @@
 import { AboutComponent } from './about/about.component';
 import { UserComponent } from './user/user.component';
+import { TaskComponent } from './task/task.component';
 
 export const childRoutes = [
   {
@@ -9,8 +10,18 @@ export const childRoutes = [
     data: { icon: 'dashboard', text: 'Dashboard' }
   }, {
     path: 'user',
-    component: UserComponent,
-    data: { icon: '', text: 'User' }
+    //component: UserComponent,
+    data: { icon: '', text: 'User' },
+    // children: [{
+    //   path: 'addtask',
+    //   component: TaskComponent
+    // },
+    // {
+    //   path: 'edittask', redirectTo: 'addtask'
+    // }]
+  
+     loadChildren:()=>import('./user/user.module').then(m=>m.UserModule),
+    
   },
   {
     path: 'about',

@@ -12,12 +12,17 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { UserDetailsComponent } from './user-details/user-details.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent],
+    UserComponent,
+    UserDetailsComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,7 +30,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     WjGridModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    MatGridListModule,
+    MatCardModule
 
   ],
   providers: [LoginService],
