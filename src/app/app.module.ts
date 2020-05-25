@@ -4,8 +4,6 @@ import { AngularMaterialModule } from './angular-material.module'
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginService } from './_services/login.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import { FormsModule } from '@angular/forms';
