@@ -1,0 +1,24 @@
+<mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile [colspan]="colspanLeft">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <a mat-button color="primary" (click)="clickedMe()" routerLink="user-details">
+                  User Details</a>
+                  <a mat-button color="primary" (click)="clickedMe()" [routerLink]="['addtask',colspanLeft]">
+                    Add Task</a>
+              </mat-card-title>
+              
+            </mat-card-header>
+            <mat-card-content>
+                <wj-flex-grid [itemsSource]="source">
+                </wj-flex-grid>
+            </mat-card-content>
+           
+          </mat-card> 
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="colspanRight">
+      <router-outlet></router-outlet>
+    </mat-grid-tile>
+</mat-grid-list>
+

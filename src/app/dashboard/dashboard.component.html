@@ -1,0 +1,66 @@
+
+
+ <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="10px">
+
+  <div class="mb10" fxFlex="24" fxFlex.lt-lg="49">
+    <mat-card [ngClass]="danger">
+      <mat-card-header> 
+        <div mat-card-avatar>
+          <mat-icon class="icon-lg">{{icon}}   </mat-icon>
+        </div>
+        <mat-card-title>13</mat-card-title>
+        <mat-card-subtitle>Total task</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button class="float-right primary">View Task</button>
+      </mat-card-actions> 
+    </mat-card>
+  </div>
+
+  <div class="mb10 max-width-card" fxFlex="24" fxFlex.lt-lg="49">
+      <mat-card [ngClass]="warn">
+        <mat-card-header>fus
+          <div mat-card-avatar>
+            <mat-icon class="icon-lg">{{icon}}</mat-icon>
+          </div>
+          <mat-card-title>14</mat-card-title>
+          <mat-card-subtitle>Total Tickets</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button class="float-right primary">View Tickets</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+
+    <div class="mb10 max-width-card" fxFlex="24" fxFlex.lt-lg="49">
+        <mat-card [ngClass]="success">
+          <mat-card-header>fus
+            <div mat-card-avatar>
+              <mat-icon class="icon-lg">{{icon}}</mat-icon>
+            </div>
+            <mat-card-title>15</mat-card-title>
+            <mat-card-subtitle>MK</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button class="float-right primary">View Details</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+
+      <div class="mb10 max-width-card" fxFlex="24" fxFlex.lt-lg="49">
+        <mat-card [ngClass]="info">
+          <mat-card-header>fus
+            <div mat-card-avatar>
+              <mat-icon class="icon-lg">{{icon}}</mat-icon>
+            </div>
+            <mat-card-title>162222</mat-card-title>
+            <mat-card-subtitle>MK</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button class="float-right primary">View NewTickets</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+</div>

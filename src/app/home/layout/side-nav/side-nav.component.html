@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <a
+      *ngFor="let item of routes"
+      mat-list-item
+      [routerLinkActive]="'active'"
+      [routerLink]="['/home', item.path]"
+    >{{item.data.text}}
+      
+    </a>
+  </mat-nav-list>
