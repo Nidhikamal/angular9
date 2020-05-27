@@ -27,6 +27,11 @@ export const childRoutes = [
     path: 'about',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
     data: { icon: '', text: 'About' }
+  },
+  {
+    path: 'leaflet',
+    loadChildren: () => import('./leaflet/leaflet.module').then(m => m.LeafletModule),
+    data: { icon: '', text: 'Leafletmap' }
   }
   //     {
   //       path: 'charts',

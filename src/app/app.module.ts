@@ -16,11 +16,14 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     UserDetailsComponent,
+    
+
     
     
     ],
