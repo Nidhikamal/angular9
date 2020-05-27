@@ -24,13 +24,7 @@ import { AgmGoogleMapComponent } from './dashboard/agm-google-map/agm-google-map
     AppComponent,
     UserComponent,
     UserDetailsComponent,
-<<<<<<< Updated upstream
-    
-
-    
-=======
     //AgmGoogleMapComponent
->>>>>>> Stashed changes
     
     ],
   imports: [
