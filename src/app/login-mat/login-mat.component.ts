@@ -57,12 +57,9 @@ export class LoginComponent implements OnInit {
         }, error => {
           this.loginInvalid = true;
        });*/
-<<<<<<< Updated upstream
+
 this.router.navigate(['/home/dashboard']);
-=======
-this.router.navigate(['/home']);
->>>>>>> Stashed changes
-           
+
       
     } else {
 
