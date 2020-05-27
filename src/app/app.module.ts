@@ -16,7 +16,10 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmGoogleMapComponent } from './dashboard/agm-google-map/agm-google-map.component';
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 
 @NgModule({

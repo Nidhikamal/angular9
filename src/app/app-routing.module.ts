@@ -5,7 +5,7 @@ import { EmployeeListComponent } from './navigation/employee-list/employee-list.
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'login',
     loadChildren: () => import('./login-mat/login-mat.module').then(m => m.LoginmatModule)
