@@ -14,6 +14,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { UserDetailsComponent } from './user-details/user-details.component'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgmGoogleMapComponent } from './dashboard/agm-google-map/agm-google-map.component';
+
 
 
 
@@ -22,9 +24,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppComponent,
     UserComponent,
     UserDetailsComponent,
+<<<<<<< Updated upstream
     
 
     
+=======
+    //AgmGoogleMapComponent
+>>>>>>> Stashed changes
     
     ],
   imports: [

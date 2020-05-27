@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         password:  this.form.get('password').value,
       };
        
-        this.authenticationService.login(loginPayload).subscribe(data => {
+       /* this.authenticationService.login(loginPayload).subscribe(data => {
             console.log(data);
             this.response = data;
             if (this.response && this.response.token) {
@@ -56,7 +56,8 @@ export class LoginComponent implements OnInit {
           }
         }, error => {
           this.loginInvalid = true;
-       });
+       });*/
+this.router.navigate(['/home']);
            
       
     } else {
