@@ -1,3 +1,4 @@
+@import "~@grapecity/wijmo.styles/wijmo.css";
   /* Navigation link styles */
   @import "~leaflet/dist/leaflet.css";
   nav a {
