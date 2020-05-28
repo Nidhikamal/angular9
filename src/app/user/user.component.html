@@ -3,7 +3,9 @@
         <mat-card>
             <mat-card-header>
               <mat-card-title>
-                <a mat-button color="primary" (click)="clickedMe()" routerLink="user-details">
+                <a mat-button color="primary"  routerLink="user-details">
+                  <!-- (click)="clickedMe()" 
+                  (spanChangeEmitter)="spanChanged($event)" -->
                   User Details</a>
                   <a mat-button color="primary" (click)="clickedMe()" [routerLink]="['addtask',colspanLeft]">
                     Add Task</a>

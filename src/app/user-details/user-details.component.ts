@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SharedService } from '../_services/shared-service.service';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  // @Output() spanChangeEmitter = new EventEmitter();
+  @Output() spanChangeEmitter: EventEmitter<number> = new EventEmitter<number>();
+  colspanLeft = 1;
 
-  ngOnInit(): void {
+  constructor(private _sharedService: SharedService) { 
+    this.colspanLeft = 1;
+    this.spanChanged();
   }
 
+  spanChanged() {
+    this._sharedService.emitChange(this.colspanLeft);
+
+  }
+
+  ngOnInit(): void { 
+  }
+  spanChanged1() {
+    console.log("event emitted: " + this.colspanLeft);
+    this.spanChangeEmitter.emit(this.colspanLeft);
+  }
 }

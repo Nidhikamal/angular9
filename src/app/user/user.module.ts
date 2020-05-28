@@ -4,6 +4,7 @@ import {WjGridModule} from '@grapecity/wijmo.angular2.grid';
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
 import {MatButtonModule} from '@angular/material/button';
+import { SharedService } from '../_services/shared-service.service';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
     WjGridModule,
     UserRoutingModule,
     MatButtonModule
-  ]
+  ],
+  providers:[SharedService]
 })
 export class UserModule { }
