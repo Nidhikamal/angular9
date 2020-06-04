@@ -44,13 +44,13 @@ export class LoginComponent implements OnInit {
         password:  this.form.get('password').value,
       };
        
-      this.authenticationService.login(loginPayload).subscribe(data => {
-           console.log(data);
-           this.response = data;
-           if (this.response && this.response.token) {
-              console.log('user.token' + this.response.token);
-              localStorage.setItem('token', this.response.token); // store token in local storage. /
-              this.router.navigate(['/home/dashboard']);
+        this.authenticationService.login(loginPayload).subscribe(data => {
+            console.log(data);
+            this.response = data;
+            if (this.response && this.response.token) {
+            console.log('user.token' + this.response.token);
+            localStorage.setItem('token', this.response.token); // store token in local storage. /
+            this.router.navigate(['/home/dashboard']);
           } else {
             this.loginInvalid = true;
           }

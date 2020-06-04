@@ -25,6 +25,10 @@ export class AuthenticationService {
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshe
                 localStorage.setItem('currentUser', JSON.stringify(user));
+<<<<<<< HEAD
+=======
+                alert(  localStorage.getItem('currentUser'));
+>>>>>>> eefb6c95c3ce6900f16acad9139edb6d9f13dd35
                 this.currentUserSubject.next(user);
                 return user;
             }));
