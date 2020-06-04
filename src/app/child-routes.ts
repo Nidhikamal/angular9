@@ -19,9 +19,9 @@ export const childRoutes = [
     // {
     //   path: 'edittask', redirectTo: 'addtask'
     // }]
-  
-     loadChildren:()=>import('./user/user.module').then(m=>m.UserModule),
-    
+
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+
   },
   {
     path: 'about',
