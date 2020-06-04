@@ -1,0 +1,17 @@
+@import "_themes.scss";
+@import "_mixins.scss";
+
+.layout-container {
+    @include themify($themes) {
+      color: themed('textColor');  
+      background-color: themed('backgroundColor');  
+    }
+}
+
+.sidenav-container{
+  @include themify($themes) {
+    color: themed('textColor');  
+    background-color: themed('backgroundColor');  
+  }
+}
+
