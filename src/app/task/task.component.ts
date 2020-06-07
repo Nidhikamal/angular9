@@ -11,13 +11,13 @@ export class TaskComponent implements OnInit {
   colspanLeft = 1;
   colspanRight = 1;
 
-  constructor(private _Activatedroute:ActivatedRoute) { }
+  constructor(private Activatedroute:ActivatedRoute) { }
   leftSpan:string;
   navLinks:NavLink[]=[];
   ngOnInit(): void {
     /*snapshot
     this.leftSpan=this._Activatedroute.snapshot.paramMap.get("leftSpan");*/
-    this._Activatedroute.paramMap.subscribe(params => { 
+    this.Activatedroute.paramMap.subscribe(params => { 
       console.log(params);
       this.leftSpan = params.get('leftSpan'); 
     });

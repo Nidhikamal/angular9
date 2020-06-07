@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       ...childRoutes
     ]
-  }]
+  }];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

@@ -10,9 +10,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
-import { GoogleMapsModule } from '@angular/google-maps';
-import { AgmGoogleMapComponent } from './agm-google-map/agm-google-map.component'
+import { AgmGoogleMapComponent } from './agm-google-map/agm-google-map.component';
+
+
 import { AgmCoreModule } from '@agm/core';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [DashboardComponent,

@@ -11,7 +11,7 @@ export class BarChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let chart = new CanvasJS.Chart("chartContainer", {
+    const chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
       exportEnabled: true,
       title: {

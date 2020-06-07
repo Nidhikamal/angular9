@@ -10,7 +10,7 @@ export const childRoutes = [
     data: { icon: 'dashboard', text: 'Dashboard' }
   }, {
     path: 'user',
-    //component: UserComponent,
+    // component: UserComponent,
     data: { icon: '', text: 'User' },
     // children: [{
     //   path: 'addtask',
@@ -19,9 +19,9 @@ export const childRoutes = [
     // {
     //   path: 'edittask', redirectTo: 'addtask'
     // }]
-  
-     loadChildren:()=>import('./user/user.module').then(m=>m.UserModule),
-    
+
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+
   },
   {
     path: 'about',

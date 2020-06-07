@@ -12,7 +12,10 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private router: Router, private formBuilder: FormBuilder,private loginservice: LoginService,private authenticationService: AuthenticationService
+  constructor( private router: Router,
+               private formBuilder: FormBuilder,
+               private loginservice: LoginService,
+               private authenticationService: AuthenticationService
     ) { 
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
@@ -45,7 +48,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.isSubmitted = true;
     if(this.loginForm.invalid){
-      //alert s message
+      // alert s message
       return;
     }
     
@@ -60,20 +63,20 @@ export class LoginComponent implements OnInit {
 
 
     this.loading = true;
-        this.authenticationService.login(loginPayload)
+    this.authenticationService.login(loginPayload)
             .pipe(first())
             .subscribe(
                 data => {
-                     console.log(data)
+                     console.log(data);
 
-                    this.router.navigate(['/home']);
+                     this.router.navigate(['/home']);
                 },
                 error => {
                     this.error = error;
                     // this.loading = false;
                 });
 
-    //do create a service folder and place all service.ts theree...its for coding std..
+    // do create a service folder and place all service.ts theree...its for coding std..
     // this.loginservice.login(loginPayload).subscribe(result => {
 
     //   this.response = result;

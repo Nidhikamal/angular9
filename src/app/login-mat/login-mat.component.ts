@@ -57,8 +57,7 @@ export class LoginComponent implements OnInit {
         }, error => {
           this.loginInvalid = true;
        });
-
-//this.router.navigate(['/home/dashboard']);
+// this.router.navigate(['/home/dashboard']);
 
       
     } else {
@@ -70,3 +69,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+

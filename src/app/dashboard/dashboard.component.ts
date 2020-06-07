@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
 
   
   
+
   constructor(private authenticationService: AuthenticationService) { this.loadList()
 
   }
@@ -28,6 +29,7 @@ export class DashboardComponent implements OnInit {
   warn : string = "warn";
   success : string = "success";
   info : string = "info";
+
 
   ngOnInit() {}
   loadList(){

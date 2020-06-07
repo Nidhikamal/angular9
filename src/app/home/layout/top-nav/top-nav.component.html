@@ -1,4 +1,5 @@
 <mat-toolbar color="primary" class="fix-nav">
+
     <button type="button" mat-icon-button class="visible-md" >
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
@@ -43,3 +44,26 @@
       <mat-icon>exit_to_app</mat-icon>
     </button> -->
   </mat-toolbar>
+
+
+  <div class="nav-brand">
+    Material Admin
+  </div>
+  <div>&nbsp;</div>
+  <div><button mat-button color="warn" (click)="logout()">logout</button></div>
+  <span class="nav-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="beforeMenu">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
+  </button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <!-- <button mat-menu-item *ngFor="let thm in themeItems"
+     (click)="themeChange(thm.themeKey)">{{thm.theme}}</button> -->
+    <button mat-menu-item (click)="themeChange('theme-pink')">Normal</button>
+    <button mat-menu-item (click)="themeChange('theme-light')">Light</button>
+    <button mat-menu-item (click)="themeChange('theme-dark')">Dark</button>
+    <button mat-menu-item (click)="themeChange('theme-red')">Red</button>
+    <button mat-menu-item (click)="themeChange('theme-blue')">Blue</button>
+  </mat-menu>
+</mat-toolbar>
+

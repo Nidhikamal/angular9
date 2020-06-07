@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularMaterialModule } from './angular-material.module'
+import { AngularMaterialModule } from './angular-material.module';
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginService } from './_services/login.service';
+import { HttpClientModule } from '@angular/common/http';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,9 +15,6 @@ import {MatCardModule} from '@angular/material/card';
 import { UserDetailsComponent } from './user-details/user-details.component'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmGoogleMapComponent } from './dashboard/agm-google-map/agm-google-map.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ErrorInterceptor } from './_helpers/error.interceptor';
-import { JwtInterceptor } from './_helpers/jwt.interceptor';
 
 
 
@@ -26,7 +24,7 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
     AppComponent,
     UserComponent,
     UserDetailsComponent,
-    //AgmGoogleMapComponent
+    // AgmGoogleMapComponent
     
     ],
   imports: [
@@ -42,12 +40,7 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
     FlexLayoutModule
 
   ],
-  providers: [
-    LoginService,
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  
-  ],
+  providers: [LoginService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -14,7 +14,7 @@ const routes: Routes = [{
     },
     {
     path: 'addtask/:leftSpan',
-    //component: TaskComponent
+    // component: TaskComponent
     loadChildren:()=>import('../task/task.module').then(m=>m.TaskModule),
   },
   {

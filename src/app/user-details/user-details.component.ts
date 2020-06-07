@@ -12,13 +12,13 @@ export class UserDetailsComponent implements OnInit {
   @Output() spanChangeEmitter: EventEmitter<number> = new EventEmitter<number>();
   colspanLeft = 1;
 
-  constructor(private _sharedService: SharedService) { 
+  constructor(private sharedService: SharedService) { 
     this.colspanLeft = 1;
     this.spanChanged();
   }
 
   spanChanged() {
-    this._sharedService.emitChange(this.colspanLeft);
+    this.sharedService.emitChange(this.colspanLeft);
 
   }
 

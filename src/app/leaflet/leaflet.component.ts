@@ -25,8 +25,9 @@ private map;
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
     
+    //  changed
     tiles.addTo(this.map);
-  var marker = L.marker([40.711529, -74.080891]).addTo(this.map);
+    const marker = L.marker([40.711529, -74.080891]).addTo(this.map);
 
   }
 

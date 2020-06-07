@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agm-google-map.component.css']
 })
 export class AgmGoogleMapComponent implements OnInit {
+  title = 'angulargooglemap';
+  lat = 43.653908;
+  lng = -79.384293;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  title = 'angulargooglemap';
-  lat: number = 43.653908;
-  lng: number = -79.384293;
+  
 }
