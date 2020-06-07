@@ -1,4 +1,5 @@
 @import "~@grapecity/wijmo.styles/wijmo.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
   /* Navigation link styles */
   @import "~leaflet/dist/leaflet.css";
   nav a {

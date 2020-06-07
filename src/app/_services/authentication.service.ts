@@ -25,15 +25,25 @@ export class AuthenticationService {
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshe
                 localStorage.setItem('currentUser', JSON.stringify(user));
-                alert(  localStorage.getItem('currentUser'));
                 this.currentUserSubject.next(user);
                 return user;
             }));
     }
+    getAllUsers(): Observable<any[]> {
+        return this.http.get<any>(environment.api + '/users' );
+      }
 
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }
+
+    refreshToken(token)  {
+        return this.http.post(environment.api+ '/token/refresh-token', token,
+        ).pipe(map(data => {
+        return data;
+        }));
+        }
+    
 }

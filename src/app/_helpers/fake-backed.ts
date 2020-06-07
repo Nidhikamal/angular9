@@ -20,6 +20,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             .pipe(dematerialize());
 
         function handleRoute() {
+            alert("hii");
             switch (true) {
                 case url.endsWith('/users/authenticate') && method === 'POST':
                     return authenticate();
@@ -47,6 +48,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function getUsers() {
+            alert("hoi");
             if (!isLoggedIn()) return unauthorized();
             return ok(users);
         }

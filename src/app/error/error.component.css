@@ -1,0 +1,10 @@
+.loginlogo{
+    width: 35px;
+    margin-top: -6px;
+    margin-right: 4px;
+}
+
+.bg-black, .bg-inverse {
+    background-color: #004c9099 !important;
+    padding: 30px;
+}

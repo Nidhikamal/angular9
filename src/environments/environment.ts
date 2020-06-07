@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api: 'http://192.168.10.129:8080',
+  apiUrl: 'http://localhost:4000',
   offsetSeconds: 900
 };
 

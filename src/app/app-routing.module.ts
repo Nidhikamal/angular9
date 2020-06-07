@@ -19,6 +19,9 @@ const routes: Routes = [
     path: 'loginold',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
+  { path: 'error', 
+  loadChildren: () => import('./error/error.module').then(m => m.ErrorModule)
+  },
 
   {path :'departments',component:DepartmentListComponent},
 {path :'employee',component:EmployeeListComponent},
