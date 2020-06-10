@@ -43,8 +43,14 @@ export class LoginComponent implements OnInit {
         username: this.form.get('username').value,
         password:  this.form.get('password').value,
       };
+      // const loginPayload = {
+      //   grant_type: 'password',
+      //   username: 'user',
+      //   password: 'pass'
+      // }
+      
        
-        this.authenticationService.login(loginPayload).subscribe(data => {
+        this.authenticationService.login(this.form.get('username').value,this.form.get('password').value).subscribe(data => {
             console.log(data);
             this.response = data;
             if (this.response && this.response.token) {

@@ -5,7 +5,7 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 import { User } from '../_models';
 
-const users: User[] = [{ id: 1, username: 'admin', password: 'admin', firstName: 'Test', lastName: 'User' }];
+const users: User[] = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -20,7 +20,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             .pipe(dematerialize());
 
         function handleRoute() {
-            alert("hii");
             switch (true) {
                 case url.endsWith('/users/authenticate') && method === 'POST':
                     return authenticate();
@@ -48,7 +47,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function getUsers() {
-            alert("hoi");
             if (!isLoggedIn()) return unauthorized();
             return ok(users);
         }

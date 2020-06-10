@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://192.168.10.129:8080',
+  api: 'http://192.168.10.155:8080/esflood',
   apiUrl: 'http://localhost:4000',
   offsetSeconds: 900
 };
