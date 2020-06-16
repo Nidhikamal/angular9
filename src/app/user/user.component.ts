@@ -10,10 +10,9 @@ import { SharedService } from '../_services/shared-service.service';
 })
 export class UserComponent implements OnInit {
   source: any;
-
-  constructor(private sharedService: SharedService) {
+  constructor(private _sharedService: SharedService) {
     this.source = this.getData(100);
-    sharedService.changeEmitted$.subscribe(
+    _sharedService.changeEmitted$.subscribe(
       span => {
         this.colspanLeft = span;
         this.colspanRight = span;

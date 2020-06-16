@@ -1,0 +1,15 @@
+<mat-dialog-content>
+    <mat-tab-group>
+        <mat-tab label="Overview">
+            <p>{{matDataJson.overview.definition}}</p>
+            <p> {{matDataJson.overview.example}}</p>
+        </mat-tab>
+        <mat-tab label="API">
+            <h3>API reference for Angular Material {{diaData.mat_component}}</h3>
+            <p>import {{matDataJson.api}} from '@angular/material/dialog';</p>
+        </mat-tab>
+    </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+</mat-dialog-actions>

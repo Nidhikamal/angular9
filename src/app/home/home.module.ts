@@ -9,15 +9,18 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { HomeRoutingModule } from './home-routing.module';
-// import {HomeComponent} from './home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import { DialogueComponent } from '../shared/models/dialogue/dialogue.component';
+
 
 @NgModule({
-  declarations: [LayoutComponent,TopNavComponent,SideNavComponent],
+  declarations: [LayoutComponent, TopNavComponent, SideNavComponent,DialogueComponent],
   imports: [
     CommonModule,
     WjGridModule,
@@ -28,7 +31,10 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
     MatIconModule,
     MatInputModule,
     MatMenuModule,
-    MatListModule
-  ]
+    MatListModule,
+    MatDialogModule,
+    MatTabsModule
+  ],
+  entryComponents:[DialogueComponent]
 })
 export class HomeModule { }

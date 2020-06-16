@@ -1,0 +1,10 @@
+[
+    {
+        "component": "mat-toolbar",
+        "api": "MatDialogModule",
+        "overview": {
+            "definition": "item defenition",
+            "example": "example"
+        }
+    }
+]

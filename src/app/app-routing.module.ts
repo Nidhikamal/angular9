@@ -12,22 +12,24 @@ const routes: Routes = [
     loadChildren: () => import('./login-mat/login-mat.module').then(m => m.LoginmatModule)
   },
   {
-    path: 'home',canActivate: [AuthGuard] ,
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule )
+    path: 'home',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'loginold',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
-  { path: 'error', 
-  loadChildren: () => import('./error/error.module').then(m => m.ErrorModule)
+  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then(m => m.ErrorModule)
   },
 
-  {path :'departments',component:DepartmentListComponent},
-{path :'employee',component:EmployeeListComponent},
+  { path: 'departments', component: DepartmentListComponent },
+  { path: 'employee', component: EmployeeListComponent },
 
 
-                                         
+
 ];
 
 @NgModule({
