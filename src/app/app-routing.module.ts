@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DepartmentListComponent } from './navigation/department-list/department-list.component';
-import { EmployeeListComponent } from './navigation/employee-list/employee-list.component';
+import { DepartmentListComponent, EmployeeListComponent } from './components';
 import { AuthGuard } from '../app/_helpers/auth.guard';
 
 

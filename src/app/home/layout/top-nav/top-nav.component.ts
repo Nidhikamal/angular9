@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../_services/authentication.service';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogueComponent } from 'src/app/shared/models/dialogue/dialogue.component';
+import { Popup } from 'src/app/shared/popupmethod';
 
 @Component({
   selector: 'app-top-nav',
@@ -22,7 +21,7 @@ export class TopNavComponent implements OnInit {
 
   constructor(private router: Router, 
     private authenticationService: AuthenticationService,
-    public dialog: MatDialog) { }
+    private popupcomp: Popup) { }
 
   ngOnInit(): void {
   }
@@ -32,19 +31,8 @@ export class TopNavComponent implements OnInit {
   }
   themeChange(color: string) {
     this.themeChangeEmitter.emit(color);
-  }
-
-  /*For dialogue box */
-  openDialogue(matItem:string) {
-    
-    const dialogRef = this.dialog.open(DialogueComponent, {
-      height: '400px',
-      width: '600px',
-      data: {mat_component:matItem}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed',result);
-    });
+  } 
+  openDialogue(matItem: string){
+    this.popupcomp.openDialogue(matItem);
   }
 }

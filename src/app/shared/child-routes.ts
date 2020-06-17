@@ -1,6 +1,5 @@
-import { AboutComponent } from '../about/about.component';
-import { UserComponent } from '../user/user.component';
-import { TaskComponent } from '../task/task.component';
+
+//import { FlexSheetComponent } from '../components/flex-sheet/flex-sheet.component';
 
 export const childRoutes = [
   {
@@ -11,16 +10,23 @@ export const childRoutes = [
   }, {
     path: 'user',
     data: { icon: '', text: 'User' },
-    loadChildren: () => import('../user/user.module').then(m => m.UserModule),
+    loadChildren: () => import('../components').then(m => m.UserModule),
 
   },
   {
     path: 'about',
-    loadChildren: () => import('../about/about.module').then(m => m.AboutModule),
+    loadChildren: () => import('../components').then(m => m.AboutModule),
     data: { icon: '', text: 'About' }
   },
   {
     path: 'leaflet',
-    loadChildren: () => import('../leaflet/leaflet.module').then(m => m.LeafletModule),
+    loadChildren: () => import('../components').then(m => m.LeafletModule),
     data: { icon: '', text: 'Leafletmap' }
-  }];
+  },
+  {
+    path: 'flexsheet',
+    //component:FlexSheetComponent,
+    loadChildren: () => import('../components').then(m => 	m.FlexSheetModule),
+    data: { icon: '', text: 'FlexSheet' }
+  }
+];

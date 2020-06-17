@@ -1,5 +1,13 @@
 [
     {
+        "component": "mat-button",
+        "api": "MatButtonModule",
+        "overview": {
+            "definition": "item defenition",
+            "example": "example"
+        }
+    },
+    {
         "component": "mat-toolbar",
         "api": "MatDialogModule",
         "overview": {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { SharedService } from '../_services/shared-service.service';
+import { SharedService } from '../../_services';
 
 @Component({
   selector: 'app-user-details',

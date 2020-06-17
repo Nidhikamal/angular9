@@ -23,10 +23,14 @@ export class DialogueComponent implements OnInit {
   ngOnInit(): void {
     this.httpClient.get("assets/mat-items.json").subscribe(data => {
       let tempJson = data as JSON[];
-      this.matDataJson = this.getMatItemJson(tempJson);
+       this.getMatItemJson(tempJson);
+      console.log(this.matDataJson);
     });
   }
   getMatItemJson(tempJson: JSON[]) {
-    return tempJson[0];
+    tempJson.forEach(item=> {
+      if(item["component"]==this.diaData.mat_component)
+      this.matDataJson = item;
+    });
   }
 }

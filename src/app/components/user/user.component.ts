@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
-import { SharedService } from '../_services/shared-service.service';
+import { SharedService } from '../../_services';
 
 @Component({
   selector: 'app-user',

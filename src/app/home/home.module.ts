@@ -35,6 +35,6 @@ import { DialogueComponent } from '../shared/models/dialogue/dialogue.component'
     MatDialogModule,
     MatTabsModule
   ],
-  entryComponents:[DialogueComponent]
+  //entryComponents:[DialogueComponent]
 })
 export class HomeModule { }

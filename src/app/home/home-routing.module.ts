@@ -4,8 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
 import { childRoutes } from '../shared/child-routes';
-import { AboutComponent } from '../about/about.component';
-import { UserComponent } from '../user/user.component';
+import { AboutModule,FlexSheetModule } from '../components';
 
 const routes: Routes = [
   {
