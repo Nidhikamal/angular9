@@ -28,5 +28,11 @@ export const childRoutes = [
     //component:FlexSheetComponent,
     loadChildren: () => import('../components').then(m => 	m.FlexSheetModule),
     data: { icon: '', text: 'FlexSheet' }
+  },
+  {
+    path: 'flexgrid',
+    //component:FlexSheetComponent,
+    loadChildren: () => import('../components/').then(m => 	m.FlexGridModule),
+    data: { icon: '', text: 'FlexGrid' }
   }
 ];
