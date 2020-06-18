@@ -19,6 +19,7 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backed';
 import { WjGridSheetModule } from '@grapecity/wijmo.angular2.grid.sheet';
+import { DatatablematModule } from './components/datatablemat/datatablemat.module';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,8 @@ import { WjGridSheetModule } from '@grapecity/wijmo.angular2.grid.sheet';
     MatGridListModule,
     MatCardModule,
     FlexLayoutModule,
-    WjGridSheetModule
-
+    WjGridSheetModule,
+    DatatablematModule
   ],
   providers: [LoginService
     , { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

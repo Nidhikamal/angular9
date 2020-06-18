@@ -28,5 +28,11 @@ export const childRoutes = [
     //component:FlexSheetComponent,
     loadChildren: () => import('../components').then(m => 	m.FlexSheetModule),
     data: { icon: '', text: 'FlexSheet' }
+  },
+  {
+    path: 'matdatatable',
+    //component:MatDatatable,
+    loadChildren: () => import('../components').then(m => 	m.DatatablematModule),
+    data: { icon: '', text: 'MatDatatable' }
   }
 ];
