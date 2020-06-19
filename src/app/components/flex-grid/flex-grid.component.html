@@ -1,0 +1,53 @@
+<!-- Auto refreshing can make true or false -->
+
+<!-- <div class="container-fluid">
+    <wj-flex-grid #flex
+        [deferResizing]="true"
+        [(itemsSource)]="data">
+        <wj-flex-grid-column [binding]="'id'" [header]="'ID'" [width]="60" [allowSorting]="false"></wj-flex-grid-column>
+        <wj-flex-grid-column [binding]="'country'" [header]="'Country'"></wj-flex-grid-column>
+        <wj-flex-grid-column [binding]="'sales'" [header]="'Sales'"></wj-flex-grid-column>
+        <wj-flex-grid-column [binding]="'expenses'" [header]="'Expenses'"></wj-flex-grid-column>
+    </wj-flex-grid>
+</div> -->
+
+<!-- multi sorting of different coloums  -->
+
+<!-- <div class="container-fluid">
+    <wj-flex-grid #flex
+        [alternatingRowStep]="0"
+        [(itemsSource)]="data"
+        [allowSorting]="'MultiColumn'">  
+        <wj-flex-grid-filter></wj-flex-grid-filter>
+    </wj-flex-grid>
+</div> -->
+
+<!-- <p>client side pagenation </p>
+
+<div class="container-fluid">
+    <wj-collection-view-navigator
+        headerFormat="Page {currentPage:n0} of {pageCount:n0}"
+        [byPage]="true"
+        [cv]="data">
+    </wj-collection-view-navigator>
+    <wj-flex-grid #flex
+        headersVisibility="Column"
+        [alternatingRowStep]="0"
+        [itemsSource]="data">
+    </wj-flex-grid>
+</div> -->
+
+<p>server side pagenation </p>
+<div class="container-fluid">
+    <wj-collection-view-navigator
+        [byPage]="true"
+        [headerFormat]="'Page {currentPage:n0} of {pageCount:n0}'"
+        [cv]="datas">
+    </wj-collection-view-navigator>
+    <wj-flex-grid #flex
+        [isReadOnly]="true"
+        [alternatingRowStep]="0"
+        [headersVisibility]="'Column'"
+        [itemsSource]="datas">
+    </wj-flex-grid>
+</div>

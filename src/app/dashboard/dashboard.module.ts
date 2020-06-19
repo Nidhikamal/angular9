@@ -15,12 +15,14 @@ import { AgmGoogleMapComponent } from './agm-google-map/agm-google-map.component
 
 import { AgmCoreModule } from '@agm/core';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { DrillDownComponent } from './drill-down/drill-down.component';
 
 @NgModule({
   declarations: [DashboardComponent,
     LineChartComponent,
     BarChartComponent,
-    AgmGoogleMapComponent],
+    AgmGoogleMapComponent,
+  DrillDownComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
