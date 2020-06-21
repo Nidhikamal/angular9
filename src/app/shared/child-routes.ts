@@ -34,5 +34,11 @@ export const childRoutes = [
     //component:FlexSheetComponent,
     loadChildren: () => import('../components/').then(m => 	m.FlexGridModule),
     data: { icon: '', text: 'FlexGrid' }
+  },
+  {
+    path: 'matdatatable',
+    //component:MatDatatable,
+    loadChildren: () => import('../components').then(m => 	m.DatatablematModule),
+    data: { icon: '', text: 'MatDatatable' }
   }
 ];

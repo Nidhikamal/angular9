@@ -1,0 +1,26 @@
+
+<h4>World Population Continent wise</h4>
+
+
+
+<div style="display: block; width: 300px; height: 300px;" *ngIf="showLine">
+  <canvas baseChart 
+    [data]="chartData" 
+    [labels]="chartLabels" 
+    [chartType]="chartType"
+    [options]="chartOptions"
+    [legend]="chartLegend"
+  
+    (chartClick)="chartClicked($event)" >
+  </canvas>
+</div>
+
+<div style="display: block; width: 300px; height: 300px;" *ngIf="!showLine">
+  <canvas baseChart 
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [legend]="chartLegend"
+    [chartType]="chartType">
+  </canvas>
+</div>
