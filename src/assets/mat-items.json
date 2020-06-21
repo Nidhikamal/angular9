@@ -2,6 +2,7 @@
     {
         "component": "mat-button",
         "api": "MatButtonModule",
+        "from": "@angular/material/dialog",
         "overview": {
             "definition": "item defenition",
             "example": "example"
@@ -10,8 +11,18 @@
     {
         "component": "mat-toolbar",
         "api": "MatDialogModule",
+        "from": "@angular/material/dialog",
         "overview": {
             "definition": "item defenition",
+            "example": "example"
+        }
+    },
+    {
+        "component": "wijimo-flexgrid",
+        "api": "WjGridModule,WjGridFilterModule",
+        "from": "@grapecity/wijmo.angular2.grid",
+        "overview": {
+            "definition": "wijimo flexgrid",
             "example": "example"
         }
     }

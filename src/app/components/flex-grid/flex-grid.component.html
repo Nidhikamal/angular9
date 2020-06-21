@@ -37,7 +37,12 @@
     </wj-flex-grid>
 </div> -->
 
-<p>server side pagenation </p>
+<div><button mat-button (click)="openDialogue('wijimo-flexgrid')">
+    <mat-icon>info</mat-icon>
+  </button>
+  <p>server side pagenation </p></div>
+
+
 <div class="container-fluid">
     <wj-collection-view-navigator
         [byPage]="true"
@@ -48,6 +53,8 @@
         [isReadOnly]="true"
         [alternatingRowStep]="0"
         [headersVisibility]="'Column'"
-        [itemsSource]="datas">
+        [itemsSource]="datas"
+        [allowSorting]="'MultiColumn'"
+        >
     </wj-flex-grid>
 </div>

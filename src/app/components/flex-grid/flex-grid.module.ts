@@ -5,6 +5,8 @@ import { FlexGridRoutingModule } from './flex-grid-routing.module';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { WjGridFilterModule } from "@grapecity/wijmo.angular2.grid.filter";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { WjGridFilterModule } from "@grapecity/wijmo.angular2.grid.filter";
   imports: [
     CommonModule,
     WjGridModule,WjGridFilterModule,WjInputModule,
-    FlexGridRoutingModule
+    FlexGridRoutingModule,
+    MatButtonModule,MatIconModule
   ],
   providers: []
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CollectionView } from '@grapecity/wijmo';
 import * as wjcOData from '@grapecity/wijmo.odata';
+import { Popup } from 'src/app/shared/popupmethod';
 
 @Component({
   selector: 'app-flex-grid',
@@ -11,7 +12,7 @@ export class FlexGridComponent implements OnInit {
   data: CollectionView;
   datas: wjcOData.ODataCollectionView;
 
-  constructor() { 
+  constructor( private popupcomp: Popup) { 
     this.data = this._getData(), {
       refreshOnEdit: false // on-demand sorting and filtering
   };
@@ -42,4 +43,7 @@ export class FlexGridComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openDialogue(matItem: string){
+    this.popupcomp.openDialogue(matItem);
+  }
 }
