@@ -3,6 +3,7 @@ import {PageEvent, MatPaginator} from '@angular/material/paginator'
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { UserdetailserviceService } from 'src/app/_services/userdetailservice.service';
+import { Popup } from 'src/app/shared/popupmethod';
 
 // For Datatable
 export interface PeriodicElement {
@@ -32,19 +33,19 @@ export class DatatablematComponent implements OnInit {
   // For Sorting for Datatable
   @ViewChild(MatSort, {static: true}) matSort: MatSort;
 
-  constructor(private dataService: UserdetailserviceService) {
-  }
+  constructor(private dataService: UserdetailserviceService, 
+              private popupcomp: Popup) { }
+  
 
   ngOnInit() {
     //Call the function
     this.dataService.sendGetRequest().subscribe((data: any[])=>{
       console.log(data);
       this.dataSource = new MatTableDataSource(data.slice());
-      //this.dataSource.sort = this.matSort;
     
     // For Sorting for Datatable
     this.dataSource.sort = this.matSort;    
-    this.dataSource.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;    
     })  
   }
 
@@ -68,5 +69,10 @@ pageSizeOptions: number[] = [5, 10, 25, 100];
        this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
      }
    }
+
+// For Datatable info popup
+  openDialogue(matItem: string){
+    this.popupcomp.openDialogue(matItem);
+  }
 
 }

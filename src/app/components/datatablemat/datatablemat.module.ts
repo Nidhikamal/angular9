@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule,
     MatInputModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ]
 })
 export class DatatablematModule { }
