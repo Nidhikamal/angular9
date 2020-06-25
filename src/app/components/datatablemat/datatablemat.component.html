@@ -1,8 +1,13 @@
 <!-- For Search Filter -->
-<div fxLayout fxLayoutAlign="center center">
+  <div fxLayout fxLayoutAlign="center">
     <mat-form-field fxFlex="90%">
       <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
+  </div>
+  <div align="right">
+    <button mat-button (click)="openDialogue('mat-datatable')">
+      <mat-icon>info</mat-icon>
+    </button>
   </div>
     
     <!-- For Datatable -->
