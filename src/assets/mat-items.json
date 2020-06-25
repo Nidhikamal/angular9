@@ -25,5 +25,14 @@
             "definition": "wijimo flexgrid",
             "example": "example"
         }
+    },
+    {
+        "component": "mat-textbox",
+        "api": "WjGridModule,WjGridFilterModule",
+        "from": "@grapecity/wijmo.angular2.grid",
+        "overview": {
+            "definition": "wijimo flexgrid",
+            "example": "example"
+        }
     }
 ]

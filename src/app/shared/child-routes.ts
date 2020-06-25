@@ -40,5 +40,12 @@ export const childRoutes = [
     //component:MatDatatable,
     loadChildren: () => import('../components').then(m => 	m.DatatablematModule),
     data: { icon: '', text: 'MatDatatable' }
+  },
+  {
+    path: 'formcontrols',
+    //component:MatDatatable,
+    loadChildren: () => import('../components').then(m => 	m.FormControlsModule),
+    data: { icon: '', text: 'MatFormcontrols' }
   }
+
 ];
