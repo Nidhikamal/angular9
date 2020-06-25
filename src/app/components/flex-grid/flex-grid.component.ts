@@ -7,6 +7,10 @@ import * as grid from '@grapecity/wijmo.grid';
 import * as pdf from '@grapecity/wijmo.pdf';
 import * as gridPdf from '@grapecity/wijmo.grid.pdf';
 import '@grapecity/wijmo.styles/wijmo.css';
+import * as wjcCore from '@grapecity/wijmo';
+import * as wjcGrid from '@grapecity/wijmo.grid';
+import * as wjcXlsx from '@grapecity/wijmo.xlsx';
+import * as wjcGridXlsx from '@grapecity/wijmo.grid.xlsx';
 
 @Component({
   selector: 'app-flex-grid',
@@ -15,7 +19,7 @@ import '@grapecity/wijmo.styles/wijmo.css';
 })
 export class FlexGridComponent implements OnInit {
 
-  // Reference enumerations to use them in markup.
+  // for PDF Export
   ScaleModeEnum = gridPdf.ScaleMode;
   PdfPageOrientationEnum = pdf.PdfPageOrientation;
   ExportModeEnum = gridPdf.ExportMode;
@@ -26,10 +30,15 @@ export class FlexGridComponent implements OnInit {
   data: CollectionView;
   datas: wjcOData.ODataCollectionView;
 
-  //flex ID is fetch here
+  //for Excel Export
+  includeColumnHeader = true;
+  customContent = false;
+
+  //flex ID is fetch here for PDF Export
   @ViewChild('flex') flexGrid: grid.FlexGrid;
-  //
-  
+
+  //flex ID is fetch here for Excel Export
+  @ViewChild('flex') flex: wjcGrid.FlexGrid;
 
   //Export PDF Function
   export() {
@@ -70,11 +79,48 @@ export class FlexGridComponent implements OnInit {
     });
   }
 
+  //Export Excel Function
+  save() {
+    wjcGridXlsx.FlexGridXlsxConverter.saveAsync(this.flex,
+        {
+            includeColumnHeaders: this.includeColumnHeader,
+            includeCellStyles: false,
+            formatItem: this.customContent ? this._exportFormatItem : null
+        },
+        'FlexGrid.xlsx');
+  }
+
+  //for Export PDF Functionality
+  private _exportFormatItem(args: wjcGridXlsx.XlsxFormatItemEventArgs) {
+    var p = args.panel,
+        row = args.row,
+        col = args.col,
+        xlsxCell = args.xlsxCell,
+        cell: HTMLElement,
+        color: string;
+
+    if (p.cellType === wjcGrid.CellType.Cell) {
+        if (p.columns[col].binding === 'color') {
+            //color = p.rows[row].dataItem['color'];
+            if (xlsxCell.value) {
+                if (!xlsxCell.style.font) {
+                    xlsxCell.style.font = {};
+                }
+                xlsxCell.style.font.color = (<string>xlsxCell.value).toLowerCase();
+            }
+        } else if (p.columns[col].binding === 'active' && p.rows[row] instanceof wjcGrid.GroupRow) {
+            cell = args.getFormattedCell();
+            xlsxCell.value = cell.textContent.trim();
+            xlsxCell.style.hAlign = wjcXlsx.HAlign.Left;
+        }
+    }
+  }
+
   constructor( private popupcomp: Popup) { 
     this.data = this._getData(), {
       refreshOnEdit: false // on-demand sorting and filtering
-  };
-  let url = 'https://services.odata.org/Northwind/Northwind.svc';
+    };
+    let url = 'https://services.odata.org/Northwind/Northwind.svc';
         this.datas = new wjcOData.ODataCollectionView(url, 'Customers', {
         pageSize: 6,
             pageOnServer: true,
@@ -96,9 +142,8 @@ export class FlexGridComponent implements OnInit {
     }
     return new CollectionView(data, {
       pageSize: 3
-  });  
-
-}
+    }); 
+  }
   ngOnInit(): void {
   }
 

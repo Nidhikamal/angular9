@@ -7,6 +7,7 @@ import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { WjGridFilterModule } from "@grapecity/wijmo.angular2.grid.filter";
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     WjGridModule,WjGridFilterModule,WjInputModule,
     FlexGridRoutingModule,
-    MatButtonModule,MatIconModule
+    MatButtonModule,MatIconModule,FormsModule
   ],
   providers: []
 })
