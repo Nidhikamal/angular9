@@ -76,11 +76,11 @@
                 </div>
             </div>        
         </div>
-    </div>
 
-    <!-- Export button -->
-    <button class="btn btn-default" (click)="export()">Export</button>    
-    <!-- Export PDF Functionality ends -->
+        <!-- Export button -->
+        <button class="btn btn-default" (click)="export()">Export</button>    
+        <!-- Export PDF Functionality ends -->
+    </div>    
     
     <p>server side pagenation </p>
 
@@ -100,9 +100,23 @@
         </wj-flex-grid>
     </div>
 
-    <!-- Export Excel Functionality starts -->
-    <div class="row">	
+    <!-- Excel Import & Export Functionality -->
+    <div class="row">
+        <!-- Import Excel Functionality starts -->	
 		<div class="col-md-6 col-xs-12">
+            <div class="col-md-6 col-xs-12">
+                <div class="form-inline well well-lg">
+                    <input type="file" class="form-control" style="width: 250px;" id="importFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel.sheet.macroEnabled.12" />
+                    <button (click)="load()" class="btn btn-default">Import</button>
+                    <div class="checkbox">
+                        <label>
+                            <input [(ngModel)]="includeColumnHeader" type="checkbox"> Include Column Header
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Excel Functionality starts -->
             <div class="form-inline well well-lg">
                 <button (click)="save()" class="btn btn-default">Export</button>
                 <div class="checkbox">

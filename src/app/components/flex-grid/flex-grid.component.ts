@@ -90,7 +90,7 @@ export class FlexGridComponent implements OnInit {
         'FlexGrid.xlsx');
   }
 
-  //for Export PDF Functionality
+  //for Export Excel Functionality
   private _exportFormatItem(args: wjcGridXlsx.XlsxFormatItemEventArgs) {
     var p = args.panel,
         row = args.row,
@@ -115,6 +115,15 @@ export class FlexGridComponent implements OnInit {
         }
     }
   }
+
+  //for Import Excel Functionality
+  load() {
+    let fileInput = <HTMLInputElement>document.getElementById('importFile');
+        if (fileInput.files[0]) {
+            this.customContent = false;
+            wjcGridXlsx.FlexGridXlsxConverter.loadAsync(this.flex, fileInput.files[0], { includeColumnHeaders: this.includeColumnHeader });
+        }
+    }
 
   constructor( private popupcomp: Popup) { 
     this.data = this._getData(), {

@@ -7,7 +7,57 @@
         width: auto;
        } */
 
-    .btn{
+    .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .panel {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .panel-default {
+      border-color: #ddd;
+    }
+    .panel-heading {
+      padding: 10px 15px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+    .panel-body {
+        padding: 15px;
+    }
+    .panel-group {
+      margin-bottom: 20px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .btn-default {
       color: #333;
       background-color: #fff;
       border-color: #ccc;
@@ -15,5 +65,110 @@
     .wj-flexgrid {
       height: 400px;
       margin: 6px 0;
-  }
+    }
+    .well-lg {
+      padding: 24px;
+      border-radius: 6px;
+    }
+    .well {
+      min-height: 20px;
+      padding: 19px;
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #e3e3e3;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    }
+    .form-inline .form-control {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+    }
+    .form-control {
+      display: block;
+      width: 100%;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    .form-inline {
+
+      @media (min-width: @screen-sm-min) {
+        /* Inline-block all the things for "inline" */
+        .form-group {
+          display: inline-block;
+          margin-bottom: 0;
+          vertical-align: middle;
+        }
+    
+        /* In navbar-form, allow folks to *not* use `.form-group` */
+        .form-control {
+          display: inline-block;
+          width: auto; /* Prevent labels from stacking above inputs in `.form-group` */
+          vertical-align: middle;
+        }
+    
+        /* Make static controls behave like regular ones */
+        .form-control-static {
+          display: inline-block;
+        }
+    
+        .input-group {
+          display: inline-table;
+          vertical-align: middle;
+    
+          .input-group-addon,
+          .input-group-btn,
+          .form-control {
+            width: auto;
+          }
+        }
+    
+        /* Input groups need that 100% width though */
+        .input-group > .form-control {
+          width: 100%;
+        }
+    
+        .control-label {
+          margin-bottom: 0;
+          vertical-align: middle;
+        }
+    
+        /* Remove default margin on radios/checkboxes that were used for stacking, and
+           then undo the floating of radios and checkboxes to match. */
+        .radio,
+        .checkbox {
+          display: inline-block;
+          margin-top: 0;
+          margin-bottom: 0;
+          vertical-align: middle;
+    
+          label {
+            padding-left: 0;
+          }
+        }
+        .radio input[type="radio"],
+        .checkbox input[type="checkbox"] {
+          position: relative;
+          margin-left: 0;
+        }
+    
+        /* Re-override the feedback icon. */
+        .has-feedback .form-control-feedback {
+          top: 0;
+        }
+      }
+    }
     
