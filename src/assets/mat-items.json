@@ -27,15 +27,6 @@
         }
     },
     {
-        "component": "mat-textbox",
-        "api": "WjGridModule,WjGridFilterModule",
-        "from": "@grapecity/wijmo.angular2.grid",
-        "overview": {
-            "definition": "wijimo flexgrid",
-            "example": "example"
-        }
-    },
-    {
         "component": "mat-datatable",
         "api": "MatTableModule", 
         "from": "@angular/material/table",
@@ -43,5 +34,14 @@
             "definition": "Item Defenition",
             "example": "The mat-table provides a Material Design styled data-table that can be used to display rows of data. Begin by adding the <mat-table> component to your template and passing in data. The simplest way to provide data to the table is by passing a data array to the table's dataSource input. The table will take the array and render a row for each object in the data array."
         }
-    } 
+    },
+    {
+        "component": "wijimo-flexgrid-pagination",
+        "api": "WjGridModule",
+        "from": "@grapecity/wijmo.angular2.grid",
+        "overview": {
+            "definition": "wijimo flexgrid-Server Side Pagination",
+            "example": "Server-side paging consists of making requests that bring in one page of data at a time."
+        }
+    }
 ]

@@ -41,6 +41,17 @@ export class AuthenticationService {
                 return user;
             }));
     }
+
+    getAllEmployee(): Observable<any> {
+        // let param = { 
+        //     params: new HttpParams()
+        //         .set("page", page)
+        //         .set("size", size)
+        // };
+
+        return this.http.get<any>('http://localhost:8091/employees/getAll',
+);//environment.api + '/employees/getAll' );
+    }
     getAllUsers(): Observable<any[]> {
         return this.http.get<any>(environment.api + '/users' );
       }

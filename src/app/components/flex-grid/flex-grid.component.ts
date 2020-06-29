@@ -11,6 +11,7 @@ import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as wjcXlsx from '@grapecity/wijmo.xlsx';
 import * as wjcGridXlsx from '@grapecity/wijmo.grid.xlsx';
+import { AuthenticationService } from 'src/app/_services';
 
 @Component({
   selector: 'app-flex-grid',
@@ -29,16 +30,21 @@ export class FlexGridComponent implements OnInit {
   exportMode = gridPdf.ExportMode.All;
   data: CollectionView;
   datas: wjcOData.ODataCollectionView;
+  cbData;
+  comboboxValue:any;
+
+
+  
 
   //for Excel Export
   includeColumnHeader = true;
   customContent = false;
 
   //flex ID is fetch here for PDF Export
-  @ViewChild('flex') flexGrid: grid.FlexGrid;
+  @ViewChild('grid') flexGrid: grid.FlexGrid;
 
   //flex ID is fetch here for Excel Export
-  @ViewChild('flex') flex: wjcGrid.FlexGrid;
+  @ViewChild('grid') flex: wjcGrid.FlexGrid;
 
   //Export PDF Function
   export() {
@@ -125,38 +131,35 @@ export class FlexGridComponent implements OnInit {
         }
     }
 
-  constructor( private popupcomp: Popup) { 
-    this.data = this._getData(), {
-      refreshOnEdit: false // on-demand sorting and filtering
-    };
-    let url = 'https://services.odata.org/Northwind/Northwind.svc';
-        this.datas = new wjcOData.ODataCollectionView(url, 'Customers', {
-        pageSize: 6,
-            pageOnServer: true,
-            sortOnServer: true,
-        });
+  constructor(private popupcomp :Popup ,private authenticationServ: AuthenticationService) { 
+    this.getAllEmployee();
+  }
+  getAllEmployee() {
+    console.log();
+    
+    this.authenticationServ.getAllEmployee().subscribe(data => {
+      console.log("success");
+      console.log(data); 
+      this.data=data.content;
+      this.cbData = [1, 5, 10, 20, 50];
+
+    
+      this._getData()
+
+    }, error => {
+      console.log("Error in getAllEmployee()");  
+    });
   }
   private _getData() {
-    let countries = 'US,Germany,UK,Japan,Italy,Greece'.split(','),
-        data = [];
-    for (let i = 0; i < countries.length; i++) {
-        data.push({
-            id: i,
-            country: countries[i],
-            active: i % 5 != 0,
-            downloads: Math.round(Math.random() * 20000),
-            sales: Math.random() * 10000,
-            expenses: Math.random() * 5000
-        });
-    }
-    return new CollectionView(data, {
-      pageSize: 3
-    }); 
+    
+    this.data=new CollectionView(this.data);
+    this.data.pageSize =5;
+    return this.data;
   }
   ngOnInit(): void {
   }
 
   openDialogue(matItem: string){
-    this.popupcomp.openDialogue(matItem);
+   this.popupcomp.openDialogue(matItem);
   }
 }

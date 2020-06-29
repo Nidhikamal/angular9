@@ -15,11 +15,13 @@ export class DrillDownComponent implements OnInit {
     
     
   };
-  public chartLabels: Label[] = [['India'], ['Srilanka'], 'Pakisthan'];
+  public chartLabels: Label[] = [['India'], ['Srilanka'], 'China'];
   public chartData: any[] = [50, 250, 50];
   public chartType: ChartType = 'pie';
   public chartLegend = true;
   public pieChartPlugins = [];
+  
+
 
  
 
@@ -36,46 +38,69 @@ chartClicked(e:any){
        
   plotLineChart(cdata:any){
     
+    
     this.chartType = 'bar'; 
-    // let india = [
-    //   {
-    //   data: [
-    //     { x: 10, y: 10, r: 10 },
-    //     { x: 15, y: 5, r: 15 },
-    //     { x: 26, y: 12, r: 23 },
-    //     { x: 7, y: 8, r: 8 },
-    //   ],
-    //   label: 'Series A',           
-    // }
-    // ];
     let india = [
-      { data: [40, 5, 5, 45, 56, 55, 40], label: ' srilanka' },   
+      { data: [3, 5, 5, 45, 56, 55, 40], label: ' india' },   
     ];
     let srilanka = [
-      { data: [40, 5, 5, 45, 56, 55, 40], label: ' srilanka' },   
+      { data: [15, 25, 35, 45, 56, 65, 70], label: ' srilanka' },   
     ];
     let china = [ 
-      { data: [40, 5, 5, 45, 56, 55, 40], label: 'Series africa ' },   
+      { data: [55, 45, 35, 25, 16, 5, 10], label: ' china ' },   
     ];
+    
+    let chartLabelsIndia= [
+      'kerala',
+      'karnataka',
+      'Tamilnadu',
+      'Andrapradesh',
+      'Delhi',
+      'Maharashtra',
+      'Rajasthan',
+    
+    ];
+    let chartLabelsChina= [
+      'Hubei',
+      'Hainan',
+      'Henan',
+      'Sechuan',
+      'Yunnan',
+      'Fujjan',
+      'Zhehjian',
+    
+    ];
+    let chartLabelsSrilanka= [
+      'Western Province.',
+      'North Province.',
+      'Eastern Province.',
+      'South Western Province.',
+      'Uva Province.',
+      'Central Province.',
+      'State provinance',
+    
+    ];
+    
  
     let data = null;
-    if(cdata == "India"){
+    let label =null;
+
+    if(cdata == "India")
+      label =chartLabelsIndia;
       data =india;
+  
+    if(cdata == "China"){
+      label = chartLabelsChina ;
+      data =china;
     }
     else{
-  data =srilanka ;
-    }
+      if(cdata ="Srilanka"){
+      label = chartLabelsSrilanka;
+       data = srilanka ;
+    }}
     this.chartData = data;
-  this.chartLabels= [
-    'kerala',
-    'karnataka',
-    'Tamilnadu',
-    'Andrapradesh',
-    'Delhi',
-    'Maharashtra',
-    'Rajasthan',
+    this.chartLabels = label;
   
-  ];
   
   }
 
