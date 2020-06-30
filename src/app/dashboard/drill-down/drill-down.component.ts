@@ -85,16 +85,18 @@ chartClicked(e:any){
     let data = null;
     let label =null;
 
-    if(cdata == "India")
+    if(cdata == "India"){
       label =chartLabelsIndia;
       data =india;
+    }
+     
   
-    if(cdata == "China"){
+    if(cdata =="China"){
       label = chartLabelsChina ;
-      data =china;
+      data = china;
     }
     else{
-      if(cdata ="Srilanka"){
+      if(cdata =="Srilanka"){
       label = chartLabelsSrilanka;
        data = srilanka ;
     }}
