@@ -89,9 +89,15 @@
             </button>
 
             
-    
-    <div class="row">  
-        <wj-flex-grid #grid [itemsSource]="data">
+
+            
+                <div class="container-fluid">
+                        <wj-flex-grid-search
+                            [placeholder]="'FlexGridSearch'"
+                            [grid]="grid">
+                        </wj-flex-grid-search>
+                <wj-flex-grid #grid [itemsSource]="data">
+                        <wj-flex-grid-filter></wj-flex-grid-filter>
         </wj-flex-grid>
         <wj-collection-view-navigator
         [byPage]="true"

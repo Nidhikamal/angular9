@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Colors, Color } from 'ng2-charts';
+import { Popup } from 'src/app/shared/popupmethod';
 
 @Component({
   selector: 'app-drill-down',
@@ -105,10 +106,13 @@ chartClicked(e:any){
   
   
   }
-
-  constructor() { }
+  constructor( private popupcomp: Popup) { }
 
   ngOnInit(): void {
   }
+    // For Datatable info popup
+    openDialogue(matItem: string){
+      this.popupcomp.openDialogue(matItem);
+    }
 
 }

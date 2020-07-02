@@ -43,5 +43,51 @@
             "definition": "wijimo flexgrid-Server Side Pagination",
             "example": "Server-side paging consists of making requests that bring in one page of data at a time."
         }
+    },
+    {
+        "component": "drill-down-chart",
+        "api": "ChartsModule",
+        "from": "from 'ng2-charts",
+        "overview": {
+            "definition": "Drill Down chart using ng2-chart",
+            "example": "The ng2-charts module is an open-source JavaScript library, and it is exclusively built for Angular 2+ and available via npm."
+        }
+    },
+    {
+        "component": "mat-card",
+        "api": "MatCardModule",
+        "from": "@angular/material/card",
+        "overview": {
+            "definition": "Mat-card Design ",
+            "example": " Mat-card is a content container for text, photos, and actions in the context of a single subject."
+        }
+    },
+    {
+        "component": "Bar -chart",
+        "api": "ChartsModule",
+        "from": "from 'ng2-charts",
+        "overview": {
+            "definition":"Bar Chart ",
+            "example": " Mat-card is a content container for text, photos, and actions in the context of a single subject."
+        }
+    },
+    {
+        "component": "line-chart",
+        "api": "ChartsModule",
+        "from": "from 'ng2-charts",
+        "overview": {
+            "definition":"Line Chart ",
+            "example": "Install ng2-charts using npm"
+
+        }
+    },
+    {
+        "component": "google-map",
+        "api": "ChartsModule",
+        "from": "@angular/google-maps",
+        "overview": {
+            "definition":"google-map ",
+            "example": "Install ng2-charts using npm"
+        }
     }
 ]

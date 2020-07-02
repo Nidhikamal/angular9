@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthenticationService } from '../_services/authentication.service';
+import { Popup } from '../shared/popupmethod';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
   
   
 
-  constructor(private authenticationService: AuthenticationService) { this.loadList()
+  constructor(private authenticationService: AuthenticationService,private popupcomp: Popup) { this.loadList()
 
   }
   danger : string = "danger";
@@ -32,6 +33,11 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {}
+
+// For Datatable info popup
+openDialogue(matItem: string){
+  this.popupcomp.openDialogue(matItem);
+}
   loadList(){
     this.authenticationService.getAllUsers().subscribe(data =>{  
      console.log(data);

@@ -31,7 +31,6 @@ export class FlexGridComponent implements OnInit {
   data: CollectionView;
   datas: wjcOData.ODataCollectionView;
   cbData;
-  comboboxValue:any;
 
 
   

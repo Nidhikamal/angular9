@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from '../../../assets/canvasjs.min';
+import { Popup } from 'src/app/shared/popupmethod';
 
 @Component({
   selector: 'app-bar-chart',
@@ -8,7 +9,11 @@ import * as CanvasJS from '../../../assets/canvasjs.min';
 })
 export class BarChartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private popupcomp: Popup) { }
+   // For Datatable info popup
+   openDialogue(matItem: string){
+    this.popupcomp.openDialogue(matItem);
+  }
 
   ngOnInit(): void {
     const chart = new CanvasJS.Chart("chartContainer", {

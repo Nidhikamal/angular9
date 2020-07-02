@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Popup } from 'src/app/shared/popupmethod';
 
 
 @Component({
@@ -7,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./line-chart.component.css']
 })
 export class LineChartComponent implements OnInit {
+
+  constructor(private popupcomp: Popup) { }
+   // For Datatable info popup
+   openDialogue(matItem: string){
+    this.popupcomp.openDialogue(matItem);
+  }
 
   lineChartData: Array<any> = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
@@ -56,9 +63,10 @@ export class LineChartComponent implements OnInit {
   ];
   lineChartLegend = true;
   lineChartType = 'line';
-  constructor() {}
+
 
   ngOnInit() {}
+  
   chartClicked(e: any): void {
     console.log(e.active);
     console.log(e.event);
