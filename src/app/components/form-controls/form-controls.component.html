@@ -1,9 +1,8 @@
-
-  <div class = "tp-container">
+<!--<div class = "tp-container">
 
     <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-between stretch">
       <div class="mb10" fxFlex="24" fxFlex.lt-lg="49">
-        <!-- <mat-card [ngClass]="danger">
+         <mat-card [ngClass]="danger">
           <mat-card-header>
             <div mat-card-avatar>
               <button mat-button (click)="openDialogue('mat-textbox')">
@@ -17,7 +16,7 @@
           <mat-card-actions>
             <button mat-button class="float-right primary">View Task</button>
           </mat-card-actions>
-        </mat-card> -->
+        </mat-card> 
       </div>
     </div>
     <button mat-button (click)="openDialogue('mat-textbox')">
@@ -105,11 +104,11 @@
   <button mat-menu-item>Item 1</button>
   <button mat-menu-item>Item 2</button>
 </mat-menu>
-<!-- &nbsp;&nbsp;
+ &nbsp;&nbsp;
     <button mat-button (click)="openDialogue('mat-textbox')">
       <mat-icon>info</mat-icon>
     </button>
-<mat-card>Simple card</mat-card> -->
+<mat-card>Simple card</mat-card> 
 <br/>
     <button mat-button (click)="openDialogue('mat-textbox')">
       <mat-icon>info</mat-icon>
@@ -151,7 +150,7 @@
 </button>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+    <form>
       <ng-template matStepLabel>Fill out your name</ng-template>
       <mat-form-field>
         <mat-label>Name</mat-label>
@@ -163,7 +162,7 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    <form>
       <ng-template matStepLabel>Fill out your address</ng-template>
       <mat-form-field>
         <mat-label>Address</mat-label>
@@ -186,4 +185,153 @@
   </mat-step>
 </mat-horizontal-stepper>
 
- </div>
+ </div>  -->
+
+
+
+<div>
+  <!-- Mat Registration Form -->
+  <mat-toolbar>
+    <span>Registration</span>
+  </mat-toolbar>
+  
+    <form name="regtrnForm" [formGroup]="rgstrnGrp" (ngSubmit)=onSubmit(rgstrnGrp)>
+      <button mat-button (click)="openDialogue('mat-textbox')">
+        <mat-icon>info</mat-icon>
+      </button>
+      <mat-form-field>            
+            <mat-label>First Name</mat-label>
+            <input  matInput  placeholder="First name"  name="fname" formControlName="firstname" required>            
+            <div *ngIf="regForm.firstname.invalid && (regForm.firstname.dirty || regForm.firstname.touched)" class="alert alert-danger">
+              <div *ngIf="regForm.firstname.errors.required">
+                First Name is required
+              </div>
+              <div *ngIf="regForm.firstname.errors.minlength">
+                First Name must be atleast 3 characters
+              </div>
+              <div *ngIf="regForm.firstname.errors.maxlength">
+                First Name is maximum 20 characters
+              </div>              
+            </div>            
+        </mat-form-field><br>
+        <button mat-button (click)="openDialogue('mat-textbox')">
+          <mat-icon>info</mat-icon>
+        </button>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input  matInput  placeholder="Last Name" name="lname" formControlName="lastname" required>
+            <div *ngIf="regForm.lastname.invalid && (regForm.lastname.dirty || regForm.lastname.touched)" class="alert alert-danger">
+              <div *ngIf="regForm.lastname.errors.required">
+                Last Name is required
+              </div>
+              <div *ngIf="regForm.lastname.errors.minlength">
+                Last Name must be atleast 3 characters
+              </div>
+              <div *ngIf="regForm.lastname.errors.maxlength">
+                Last Name is maximum 20 characters
+              </div>
+            </div>
+        </mat-form-field>
+        <section class="example-section">            
+            <button mat-button (click)="openDialogue('mat-radio-button')">
+              <mat-icon>info</mat-icon>
+            </button>
+            <mat-label>Gender</mat-label>&nbsp;&nbsp;&nbsp;
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+              <mat-radio-button value="Male">Male</mat-radio-button>
+              <mat-radio-button value="Female">Female</mat-radio-button>
+            </mat-radio-group>
+        </section><br>        
+        <button mat-button (click)="openDialogue('mat-date-picker')">
+          <mat-icon>info</mat-icon>
+        </button>
+        <mat-form-field>
+              <mat-label>Date Of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dob">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field><br>
+        <button mat-button (click)="openDialogue('mat-textbox')">
+          <mat-icon>info</mat-icon>
+        </button>  
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder = "Address" name="address" formControlName="address" required></textarea>
+            <div *ngIf="regForm.address.invalid && (regForm.address.dirty || regForm.address.touched)" class="alert alert-danger">
+              <div *ngIf="regForm.address.errors.required">
+                Address is required
+              </div>              
+            </div>
+        </mat-form-field><br>
+        <button mat-button (click)="openDialogue('mat-textbox')">
+          <mat-icon>info</mat-icon>
+        </button>
+        <mat-form-field>
+            <mat-label>Email ID</mat-label>
+            <input  matInput  placeholder="Email ID" name="emailID" formControlName="userMail" required>
+            <div *ngIf="regForm.userMail.invalid && (regForm.userMail.dirty || regForm.userMail.touched)" class="alert alert-danger">
+              <div *ngIf="regForm.userMail.errors.required">
+                Email ID is required
+              </div>
+              <div *ngIf="regForm.userMail.errors.pattern">
+                Invalid Email ID
+              </div>             
+            </div>
+        </mat-form-field><br>
+        <button mat-button (click)="openDialogue('mat-textbox')">
+          <mat-icon>info</mat-icon>
+        </button>
+        <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input  matInput  placeholder="Phone Number"  name="phoneNo" formControlName="phoneno" required>
+            <div *ngIf="regForm.phoneno.invalid && (regForm.phoneno.dirty || regForm.phoneno.touched)" class="alert alert-danger">
+              <div *ngIf="regForm.phoneno.errors.required">
+                Phone Number is required
+              </div>
+              <div *ngIf="regForm.phoneno.errors.minlength">
+                Phone Number must be atleast 10 digits
+              </div>
+              <div *ngIf="regForm.phoneno.errors.maxlength">
+                Phone Number is maximum 20 digits
+              </div>
+              <div *ngIf="regForm.phoneno.errors.pattern">
+                Invalid Phone Number
+              </div>
+            </div>
+        </mat-form-field><br>
+        <button mat-button (click)="openDialogue('mat-select-box')">
+          <mat-icon>info</mat-icon>
+        </button>      
+        <mat-form-field>
+          <mat-label>Occupation</mat-label>
+          <mat-select formControlName="occupation">
+            <mat-option *ngFor="let ocptn of occupation" [value]="ocptn.value">
+              {{ocptn.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <button mat-button (click)="openDialogue('mat-check-box')">
+          <mat-icon>info</mat-icon>
+        </button>      
+        <mat-label>Qualification</mat-label>&nbsp;&nbsp;&nbsp;       
+            <mat-checkbox class="example-margin" formControlName="qlfn1">
+                Graduate
+            </mat-checkbox> &nbsp;&nbsp;    
+            <mat-checkbox class="example-margin" formControlName="qlfn2">
+                Post Graduate
+            </mat-checkbox> &nbsp;&nbsp;    
+            <mat-checkbox class="example-margin" formControlName="qlfn3">
+                Other
+            </mat-checkbox>
+        <br><br>
+        <button type="button" mat-raised-button color="warn" style="width:20%" (click)="clearClick()">CLEAR</button> &nbsp;&nbsp;
+        <button type="submit" mat-raised-button color="primary" style="width:20%">REGISTER</button>       
+    </form>
+  
+  <mat-card-actions>
+    <!-- REGISTER HERE -->
+  </mat-card-actions>
+</div>
+
+
+

@@ -89,5 +89,50 @@
             "definition":"google-map ",
             "example": "Install ng2-charts using npm"
         }
+    },
+    {
+        "component": "mat-textbox",
+        "api": "MatInputModule",
+        "from": "@angular/material/input",
+        "overview": {
+            "definition": "Item Defenition",
+            "example": "matInput is a directive that allows native <input> and <textarea> elements to work with <mat-form-field>."
+        }
+    },
+    {
+        "component": "mat-radio-button",
+        "api": "MatRadioModule",
+        "from": "@angular/material/radio",
+        "overview": {
+            "definition": "Item Defenition",
+            "example": "<mat-radio-button> provides the same functionality as a native <input type=radio> enhanced with Material Design styling and animations."
+        }
+    },
+    {
+        "component": "mat-date-picker",
+        "api": "MatDatepickerModule",
+        "from": "@angular/material/datepicker",
+        "overview": {
+            "definition": "Item Defenition",
+            "example": "The datepicker allows users to enter a date either through text input, or by choosing a date from the calendar. It is made up of several components and directives that work together."
+        }
+    },
+    {
+        "component": "mat-select-box",
+        "api": "MatSelectModule",
+        "from": "@angular/material/select",
+        "overview": {
+            "definition": "Item Defenition",
+            "example": "<mat-select> is a form control for selecting a value from a set of options, similar to the native <select> element. You can read more about selects in the Material Design spec. It is designed to work inside of a <mat-form-field> element. To add options to the select, add <mat-option> elements to the <mat-select>. Each <mat-option> has a value property that can be used to set the value that will be selected if the user chooses this option. The content of the <mat-option> is what will be shown to the user. Angular Material also supports use of the native <select> element inside of <mat-form-field>. The native control has several performance, accessibility, and usability advantages. To use a native select inside <mat-form-field>, add the matNativeControl attribute to the <select> element."
+        }
+    },
+    {
+        "component": "mat-check-box",
+        "api": "MatCheckboxModule",
+        "from": "@angular/material/checkbox",
+        "overview": {
+            "definition": "Item Defenition",
+            "example": "<mat-checkbox> provides the same functionality as a native <input type=checkbox> enhanced with Material Design styling and animations."
+        }
     }
 ]
